@@ -28,6 +28,13 @@ def run_full_scan(dataset_root):
     scanner = DatasetScanner(root)
     scan_results = scanner.scan_dataset()
     
+    # Check results
+    video_files = scan_results.get('video_files', set())
+    print(f"DEBUG: Library found {len(video_files)} unique video files.")
+    
+    if len(video_files) == 0:
+        print("WARNING: Library: No videos found! Check your directory structure.")
+    
     # 3. Load Metadata
     print("DEBUG: Library: Loading metadata...")
     worker_path = root / "fine_grained_labels_with_worker_ids.json"
