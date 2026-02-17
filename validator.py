@@ -130,4 +130,11 @@ class DatasetValidator:
             if not any(short_clips.iterdir()):
                  print("[WARNING] 'short_clips/' folder exists but appears empty.")
         
-        return all_good
+    def validate_all(self):
+        """
+        Runs all validation checks (downloads and structure).
+        """
+        print("Running full dataset validation...")
+        self.validate_downloaded_files()
+        self.validate_dataset_structure()
+        print("Validation complete.")
