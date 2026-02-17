@@ -63,4 +63,6 @@ def run_full_scan(dataset_root):
     
     return scan_results
 
-__all__ = ["DatasetValidator", "DatasetScanner", "run_full_scan"]
+from .processor import DataProcessor
+
+__all__ = ["DatasetValidator", "DatasetScanner", "run_full_scan", "DataProcessor"]
