@@ -103,6 +103,7 @@ class DatasetValidator:
         
         required_files = [
             "fine_grained_labels.json",
+            "fine_grained_labels_with_worker_ids.json",
             "feedbacks_short_clips.json",
             "feedbacks_long_range.json",
             "questions.json"

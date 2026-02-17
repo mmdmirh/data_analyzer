@@ -91,5 +91,6 @@ class DatasetScanner:
             "total_videos": total_videos,
             "unpacked_videos": len([f for f in self.root.rglob("*.mp4")]),
             "zip_archives": len(zip_files),
-            "labels": labels_found
+            "labels": labels_found,
+            "video_files": video_files  # Expose file list for analysis
         }
