@@ -140,3 +140,14 @@ class DataProcessor:
             print(f"DEBUG: Saved eligible subjects to {output_path}")
         except Exception as e:
             print(f"ERROR: Could not save to {output_path}: {e}")
+
+    def print_report(self, subjects: list, top_n: int = 20):
+        """Prints a formatted report of the top eligible subjects."""
+        print("\n" + "="*50)
+        print(f"ELIGIBLE SUBJECTS: {len(subjects)}")
+        print("="*50)
+        print(f"{'Worker ID':<15} {'Good':<8} {'Bad':<8} {'Total':<8}")
+        print("-" * 50)
+        
+        for subj in subjects[:top_n]:
+            print(f"{subj['worker_id']:<15} {subj['good_count']:<8} {subj['bad_count']:<8} {subj['total_videos']:<8}")
